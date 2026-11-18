@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shrishti Sharma | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+    /* =========================
+       GLOBAL STYLES
+    ========================= */
+
+    :root {
+        --bg: #101713;
+        --card: #1C2922;
+        --card-hover: #24382D;
+        --primary: #48B887;
+        --primary-hover: #36A875;
+        --text: #EAF5ED;
+        --muted: #A4B8AA;
+        --border: #355B47;
+        --shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .container {
+        width: 85%;
+        max-width: 1150px;
+        margin: auto;
+    }
+
+    section {
+        padding: 85px 0;
+        scroll-margin-top: 80px;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+        color: var(--text);
+        margin-bottom: 10px;
+    }
+
+    .section-title span {
+        color: var(--primary);
+    }
+
+    .section-title p {
+        color: var(--muted);
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(16, 23, 19, 0.96);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+    }
+
+    nav {
+        width: 85%;
+        max-width: 1150px;
+        min-height: 75px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: 23px;
+        font-weight: 700;
+        color: var(--text);
+        white-space: nowrap;
+    }
+
+    .logo span {
+        color: var(--primary);
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: #101713;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid var(--primary);
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: var(--primary-hover);
+        border-color: var(--primary-hover);
+        transform: translateY(-3px);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--primary);
+    }
+
+    .btn-outline:hover {
+        background: var(--primary);
+        color: #101713;
+    }
+
+    /* =========================
+       HOME SECTION
+    ========================= */
+
+    #home {
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        padding: 80px 0;
+    }
+
+    .home-content {
+        max-width: 800px;
+    }
+
+    .home-content .intro {
+        color: var(--primary);
+        font-size: 17px;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+
+    .home-content h1 {
+        font-size: clamp(36px, 6vw, 58px);
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .home-content h1 span {
+        color: var(--primary);
+    }
+
+    .home-content h2 {
+        font-size: clamp(19px, 3vw, 26px);
+        color: var(--muted);
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .home-content p {
+        max-width: 650px;
+        color: var(--muted);
+        margin-bottom: 30px;
+    }
+
+    .home-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /* =========================
+       ABOUT SECTION
+    ========================= */
+
+    #about {
+        background: #141E18;
+    }
+
+    .about-content {
+        max-width: 850px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .about-content p {
+        color: var(--muted);
+        margin-bottom: 18px;
+        font-size: 15px;
+    }
+
+    .about-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 30px;
+        text-align: left;
+    }
+
+    .info-item {
+        background: var(--card);
+        padding: 18px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+    }
+
+    .info-item strong {
+        display: block;
+        color: var(--primary);
+        margin-bottom: 5px;
+    }
+
+    .info-item p {
+        margin: 0;
+        overflow-wrap: anywhere;
+    }
+
+    /* =========================
+       SKILLS SECTION
+    ========================= */
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .skill-card {
+        background: var(--card);
+        padding: 25px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .skill-card:hover {
+        background: var(--card-hover);
+        border-color: var(--primary);
+        transform: translateY(-5px);
+    }
+
+    .skill-card h3 {
+        color: var(--primary);
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .skill-card p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* =========================
+       PROJECTS SECTION
+    ========================= */
+
+    #projects {
+        background: #141E18;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .project-card {
+        background: var(--card);
+        padding: 28px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+    }
+
+    .project-card:hover {
+        background: var(--card-hover);
+        border-color: var(--primary);
+        transform: translateY(-6px);
+    }
+
+    .project-card h3 {
+        color: var(--primary);
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .project-card p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: auto;
+    }
+
+    .project-tags span {
+        background: rgba(72, 184, 135, 0.12);
+        color: var(--primary);
+        border: 1px solid var(--border);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    .project-status {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    /* =========================
+       CERTIFICATIONS
+    ========================= */
+
+    .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .cert-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 25px;
+        transition: 0.3s;
+    }
+
+    .cert-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+    }
+
+    .cert-card h3 {
+        color: var(--primary);
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .cert-card p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* =========================
+       ACHIEVEMENTS
+    ========================= */
+
+    #achievements {
+        background: #141E18;
+    }
+
+    .achievement-box {
+        max-width: 800px;
+        margin: auto;
+        display: grid;
+        gap: 18px;
+    }
+
+    .achievement-item {
+        background: var(--card);
+        padding: 22px;
+        border-left: 4px solid var(--primary);
+        border-radius: 9px;
+    }
+
+    .achievement-item h3 {
+        color: var(--text);
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .achievement-item p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* =========================
+       CONTACT SECTION
+    ========================= */
+
+    .contact-content {
+        max-width: 700px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .contact-content > p {
+        color: var(--muted);
+        margin-bottom: 30px;
+    }
+
+    .contact-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .contact-item {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 18px;
+        transition: 0.3s;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-item:hover {
+        border-color: var(--primary);
+        transform: translateY(-4px);
+    }
+
+    .contact-item strong {
+        display: block;
+        color: var(--primary);
+        margin-bottom: 5px;
+    }
+
+    .contact-item span {
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        background: var(--card);
+        border-top: 1px solid var(--border);
+        text-align: center;
+        padding: 22px 15px;
+    }
+
+    footer p {
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    footer span {
+        color: var(--primary);
+    }
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================= */
+
+    @media (max-width: 900px) {
+
+        .nav-links {
+            gap: 13px;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 650px) {
+
+        .container,
+        nav {
+            width: 90%;
+        }
+
+        nav {
+            padding: 15px 0;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav-links {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px 17px;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+        }
+
+        section {
+            padding: 65px 0;
+        }
+
+        #home {
+            min-height: 75vh;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+        }
+
+        .skills-grid,
+        .projects-grid,
+        .certifications-grid,
+        .about-info,
+        .contact-links {
+            grid-template-columns: 1fr;
+        }
+
+        .home-buttons {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .home-buttons .btn {
+            text-align: center;
+            min-width: 160px;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                Shrishti<span>.</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HOME SECTION
+    ========================= -->
+
+    <section id="home">
+        <div class="container">
+            <div class="home-content">
+
+                <p class="intro">WELCOME TO MY PORTFOLIO</p>
+
+                <h1>
+                    I'm <span>Shrishti Sharma</span>
+                </h1>
+
+                <h2>
+                    Computer Science Engineering Student
+                </h2>
+
+                <p>
+                    I am a third-year Computer Science Engineering
+                    student interested in Artificial Intelligence,
+                    Machine Learning and Data Analytics.
+                    I enjoy learning new technologies and building
+                    meaningful projects.
+                </p>
+
+                <div class="home-buttons">
+                    <a href="#projects" class="btn">
+                        Explore My Projects
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/1-WC1TDSWzgSKrwqAWa5n4e-dUmmkU2gy/view?usp=drive_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-outline">
+                        View Resume
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================= -->
+
+    <section id="about">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About <span>Me</span></h2>
+                <p>Know more about my education and interests.</p>
+            </div>
+
+            <div class="about-content">
+
+                <p>
+                    I am pursuing a Bachelor of Technology (B.Tech)
+                    in Computer Science Engineering at MIT, Indore.
+                    I am passionate about technology, programming
+                    and problem-solving.
+                </p>
+
+                <p>
+                    My areas of interest include Data Analytics,
+                    Artificial Intelligence and Machine Learning.
+                    I am continuously improving my technical skills
+                    through coursework, certifications and project work.
+                </p>
+
+                <div class="about-info">
+
+                    <div class="info-item">
+                        <strong>Education</strong>
+                        <p>B.Tech – Computer Science Engineering</p>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>College</strong>
+                        <p>MIT, Indore</p>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Current Year</strong>
+                        <p>Third Year</p>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Career Interests</strong>
+                        <p>AI/ML, Data Science & Data Analytics</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         SKILLS SECTION
+    ========================= -->
+
+    <section id="skills">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>My <span>Skills & Interests</span></h2>
+                <p>Technologies and areas I am learning.</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <p>Programming and problem-solving.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Data Analytics</h3>
+                    <p>Data analysis and insights.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Machine Learning</h3>
+                    <p>Learning machine learning concepts using Python.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Artificial Intelligence</h3>
+                    <p>Exploring AI concepts and applications.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Generative AI</h3>
+                    <p>Exploring generative AI technologies.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Problem Solving</h3>
+                    <p>Developing logical and analytical thinking.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         PROJECTS SECTION
+    ========================= -->
+
+    <section id="projects">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>My <span>Projects</span></h2>
+                <p>Some of my academic project work and ideas.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+
+                    <h3>AccidentEye</h3>
+
+                    <p>
+                        AccidentEye is an AI-based road accident
+                        detection project concept. It aims to use
+                        CCTV camera footage to identify possible
+                        road accidents and send alerts with location
+                        information to nearby emergency responders,
+                        such as police and hospitals.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>AI/ML</span>
+                        <span>Computer Vision</span>
+                        <span>CCTV</span>
+                    </div>
+
+                    <p class="project-status">
+                        Academic Project
+                    </p>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>Dream-Mate</h3>
+
+                    <p>
+                        Dream-Mate is an AI-powered personal digital
+                        companion concept designed to bring study
+                        assistance, productivity support and
+                        personalized interaction together on
+                        a single platform.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Artificial Intelligence</span>
+                        <span>NLP</span>
+                        <span>Personalization</span>
+                        <span>Productivity</span>
+                    </div>
+
+                    <p class="project-status">
+                        Academic Project
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATIONS SECTION
+    ========================= -->
+
+    <section id="certifications">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>My <span>Certifications</span></h2>
+                <p>Courses and certifications I have completed.</p>
+            </div>
+
+            <div class="certifications-grid">
+
+                <div class="cert-card">
+                    <h3>Data Analytics</h3>
+                    <p>
+                        Issued by Encode AI
+                    </p>
+                </div>
+
+                <div class="cert-card">
+                    <h3>Machine Learning Using Python</h3>
+                    <p>
+                        Issued by Udemy
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         ACHIEVEMENTS SECTION
+    ========================= -->
+
+    <section id="achievements">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>My <span>Achievements</span></h2>
+                <p>Hackathons and learning experiences.</p>
+            </div>
+
+            <div class="achievement-box">
+
+                <div class="achievement-item">
+                    <h3>Smart India Hackathon (SIH)</h3>
+                    <p>
+                        Participated in Smart India Hackathon,
+                        gaining experience in collaborative
+                        problem-solving and innovation.
+                    </p>
+                </div>
+
+                <div class="achievement-item">
+                    <h3>AI Manthan Hackathon</h3>
+                    <p>
+                        Participated in AI Manthan Hackathon
+                        and explored AI-based problem-solving.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================= -->
+
+    <section id="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Contact <span>Me</span></h2>
+                <p>Let's connect and explore opportunities.</p>
+            </div>
+
+            <div class="contact-content">
+
+                <p>
+                    Feel free to connect with me through
+                    email and professional platforms.
+                </p>
+
+                <div class="contact-links">
+
+                    <a
+                        href="mailto:shrashtisharma32@gmail.com"
+                        class="contact-item">
+
+                        <strong>Email</strong>
+                        <span>shrashtisharma32@gmail.com</span>
+
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/shrishti-sharma-a93b67383"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-item">
+
+                        <strong>LinkedIn</strong>
+                        <span>Visit My LinkedIn Profile</span>
+
+                    </a>
+
+                    <a
+                        href="https://github.com/shrashtisharma32"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-item">
+
+                        <strong>GitHub</strong>
+                        <span>Visit My GitHub Profile</span>
+
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/1-WC1TDSWzgSKrwqAWa5n4e-dUmmkU2gy/view?usp=drive_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-item">
+
+                        <strong>Resume</strong>
+                        <span>View My Resume</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+        <p>
+            © 2026 <span>Shrishti Sharma</span>.
+            All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
+
+
+
